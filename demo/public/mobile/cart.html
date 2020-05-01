@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <!--在ios中是否运行时创建快捷启动方式-->
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <!--ios设置顶部通知栏的样式 黑色-->
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <!--遇到数字不转化为电话号码的格式-->
+    <meta content="telephone=no" name="format-detection">
+    <title>购物车</title>
+    <link href="res/mui/css/mui.css" rel="stylesheet">
+    <link href="res/fontAwesome/css/font-awesome.css" rel="stylesheet">
+    <link href="css/cart.less" rel="stylesheet" type="text/less">
+    <script src="res/less/less.js"></script>
+    <script src="res/zepto/zepto.js"></script>
+    <script src="res/artTemplate/template-web.js"></script>
+    <script src="res/mui/js/mui.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/cart.js"></script>
+</head>
+<body>
+<script id="temp" type="text/html">
+    {{ each list }}
+    <li class="mui-table-view-cell mui-transitioning con_item">
+        <div class="mui-slider-right mui-disabled">
+            <a data-id="{{ $value.id }}" data-size="{{ $value.size }}" data-num="{{ $value.num }}"
+               data-productSize="{{ $value.productSize }}" data-productNum="{{ $value.productNum }}"
+               class="mui-btn mui-btn-blue edit" style="transform: translate(-90px, 0px);">编辑</a>
+            <a data-id="{{ $value.id }}" class="mui-btn mui-btn-red del"
+               style="transform: translate(-180px, 0px);">删除</a>
+        </div>
+        <a class="mui-navigate-right mui-slider-handle con_rt"
+           style="transform: translate(0px, 0px);">
+            <img class="mui-media-object mui-pull-left" src="{{ $value.pic[0].picAddr }}">
+            <div class="mui-media-body">
+                <p class="title">{{ $value.proName }}</p>
+                <p class="info">
+                    <span class="price" data-price="{{ $value.price }}">￥{{ $value.price }}</span>
+                    <span class="oldPrice">￥{{ $value.oldPrice }}</span>
+                    <span class="count mui-pull-right">×{{ $value.num }}双</span>
+                </p>
+                <p class="size">鞋码：{{ $value.size }}</p>
+            </div>
+            <input class="checked" type="checkbox" data-price="{{ $value.price }}" data-num="{{ $value.num }}">
+        </a>
+    </li>
+    {{ /each }}
+</script>
+<script id="edit" type="text/html">
+    <div class="se padding">
+        尺码：
+        <%
+        var arr = productsize.split('-')
+        var start = arr[0]
+        var end = arr[1]
+        for(var i = start; i <= end; i++){
+        %>
+        <span class="sp_size <%=i==size?'now':''%>"><%=i%></span>
+        <% } %>
+    </div>
+    <div class="count padding">
+        数量：<span class="minus">-</span><span class="num"><%=num%></span><span class="add">+</span>剩余：<span
+            class="reCount"><%=productnum%></span>件
+    </div>
+</script>
+<div class="app">
+    <!-- 头部 -->
+    <header>
+        <a href="member.html" class="left"><span class="fa fa-arrow-left"></span></a>
+        <h3>购物车</h3>
+        <a href="javascript:;" class="right"><span class="fa fa-refresh"></span></a>
+    </header>
+    <!-- 主体 -->
+    <div class="content">
+        <div class="warp">
+            <div class="mui-scroll-wrapper" id="refreshContainer">
+                <div class="mui-scroll">
+                    <ul id="OA_task_2" class="mui-table-view con">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 计算价格 -->
+    <div class="money">
+        <p class="lt">
+            <span>订单总额：</span>
+            <span class="total">￥0</span>
+        </p>
+        <a href="#" class="create">生成订单</a>
+    </div>
+    <!-- 足部 -->
+    <footer>
+        <div>
+            <a href="index.html">
+                <span class="mui-icon mui-icon-home"></span>
+                <h5>首页</h5>
+            </a>
+        </div>
+        <div>
+            <a href="category.html">
+                <span class="mui-icon mui-icon-bars"></span>
+                <h5>分类</h5>
+            </a>
+        </div>
+        <div>
+            <a href="cart.html" class="active">
+                <span class="mui-icon mui-icon-contact"></span>
+                <h5>购物车</h5>
+            </a>
+        </div>
+        <div>
+            <a href="member.html">
+                <span class="mui-icon mui-icon-gear"></span>
+                <h5>会员中心</h5>
+            </a>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

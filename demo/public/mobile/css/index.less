@@ -1,0 +1,105 @@
+//导入模块
+@import "var";
+@import "mixin";
+@import "adapter";
+@import "base";
+@import "header";
+@import "footer";
+//主体
+.content {
+  width: 100%;
+  height: 100%;
+  .warp {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    .shoes_list {
+      padding: 10rem/@baseFontSize;
+      a {
+        display: block;
+        width: 100%/3;
+        float: left;
+        img {
+          width: 100%;
+        }
+      }
+    }
+    .present {
+      padding: 10rem/@baseFontSize;
+      border-top: solid 1px #CCCCCC;
+      display: flex;
+      .present_lt {
+        flex: 2;
+        img {
+          width: 50%;
+          height: 50%;
+          float: left;
+        }
+      }
+      .present_rt {
+        flex: 1;
+        img {
+          width: 100%;
+        }
+      }
+    }
+    .sport {
+      padding: 10rem/@baseFontSize;
+      .sport_title {
+        width: 100%;
+        img {
+          width: 100%;
+        }
+      }
+      .product {
+        padding: 20rem/@baseFontSize 5rem/@baseFontSize 0;
+        .product_item {
+          width: 49%;
+          //border: solid 1px lightgray;
+          box-shadow: 1px 1px 1px 1px lightgray;
+          float: left;
+          &:nth-child(2n) {
+            margin-left: 2%;
+          }
+          .product_img {
+            width: 100%;
+            img {
+              width: 100%;
+            }
+          }
+          .product_text {
+            padding-top: 10rem/@baseFontSize;
+            p {
+              font-size: 12rem/@baseFontSize !important;
+              padding: 0 10rem/@baseFontSize;
+              text-align: center;
+            }
+            div {
+              font-size: 10rem/@baseFontSize;
+              text-align: center;
+              span.red {
+                color: #FF5328;
+              }
+              span.grey {
+                color: lightgray;
+                text-decoration: line-through;
+                margin-left: 5px;
+              }
+            }
+            .buy{
+              text-align: center;
+              padding: 10rem/@baseFontSize 0;
+              a{
+                display: inline-block;
+                padding: 2rem/@baseFontSize 12rem/@baseFontSize;
+                color: #fff;
+                background-color: @themeColor;
+                border-radius: 4px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

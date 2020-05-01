@@ -1,0 +1,32 @@
+footer {
+  width: 100%;
+  height: 50rem/@baseFontSize;
+  background-color: @themeColor;
+  position: fixed;
+  bottom: 0;
+  max-width: 750px;
+  min-width: 320px;
+  margin: 0 auto;
+  padding-top: 5rem/@baseFontSize;
+  div{
+    width: 25%;
+    text-align: center;
+    float: left;
+    a{
+      display: block;
+      h5{
+        color: #fff;
+        font-size: 12rem/@baseFontSize;
+      }
+      .mui-icon{
+        color: #fff;
+        font-size: 20rem/@baseFontSize;
+      }
+      &.active{
+        h5,.mui-icon{
+          color: #FF8C00;
+        }
+      }
+    }
+  }
+}

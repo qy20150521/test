@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>一级分类</title>
+    <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/bootstrap-validator/css/bootstrapValidator.css">
+    <link rel="stylesheet" href="assets/nprogress/nprogress.css"/>
+    <link href="css/common.css" type="text/css" rel="stylesheet">
+    <link href="css/firstClassify.css" type="text/css" rel="stylesheet">
+    <script src="assets/jquery/jquery.js"></script>
+    <script src="assets/artTemplate/template-web.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.js"></script>
+    <script src="assets/bootstrap-validator/js/bootstrapValidator.js"></script>
+    <script src="assets/nprogress/nprogress.js"></script>
+    <script src="assets/bootstrap-paginator/bootstrap-paginator.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/firstClassify.js"></script>
+</head>
+<body>
+<script type="text/html" id="temp">
+    {{ each rows }}
+    <tr>
+        <td>{{ (page -1) * size + $index + 1 }}</td>
+        <td>{{ $value.categoryName }}</td>
+    </tr>
+    {{ /each }}
+</script>
+<!-- 侧边栏 -->
+<div class="aside">
+    <h4>ITCAST</h4>
+    <div class="aside_bot">
+        <div class="head_img">
+            <img src="images/default.png">
+            <span>超级管理员</span>
+        </div>
+        <ul class="aside_menu">
+            <li><a href="userControl.html"><span class="glyphicon glyphicon-user"></span> 用户管理</a></li>
+            <li>
+                <a href="javascript:;" class="change_toggle"><span class="glyphicon glyphicon-list"></span> 分类管理</a>
+                <div class="toggle">
+                    <a href="firstClassify.html">一级分类</a>
+                    <a href="secondClassify.html">二级分类</a>
+                </div>
+            </li>
+            <li><a href="#"><span class="glyphicon glyphicon-tags"></span> 商品管理</a></li>
+        </ul>
+    </div>
+</div>
+<!-- 内容 -->
+<div class="main">
+    <nav>
+        <a href="javascript:;" class="pull-left"><span class="glyphicon glyphicon-align-justify"></span></a>
+        <a href="javascript:;" class="pull-right"><span class="glyphicon glyphicon-log-out" data-toggle="modal"
+                                                        data-target="#myModal"></span></a>
+    </nav>
+    <div class="container-fluid">
+        <ol class="breadcrumb">
+            <li><a href="#">管理系统</a></li>
+            <li><a href="#">分类管理</a></li>
+            <li class="active">一级分类</li>
+        </ol>
+        <a class="btn btn-default add" href="#" data-toggle="modal" data-target="#addModal">添加分类</a>
+        <div class="content">
+            <table class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th width="20%">序号</th>
+                    <th width="80%">分类名称</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!--<tr>-->
+                    <!--<td>1</td>-->
+                    <!--<td>哈哈</td>-->
+                <!--</tr>-->
+                </tbody>
+            </table>
+        </div>
+        <div class="page pull-right">
+            <ul class="pagination"></ul>
+        </div>
+    </div>
+</div>
+<!-- add modal -->
+<div class="modal fade" id="addModal" tabindex="-1">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">添加分类</h4>
+            </div>
+            <div class="modal-body">
+                <form id="form" class="form-horizontal" autocomplete="off">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <input name="firstClassify" type="text" class="form-control" placeholder="请输入一级分类名称">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="submit" class="btn btn-primary addAffirm" form="form">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- logout modal -->
+<div class="modal fade" id="myModal" tabindex="-1">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
+            </div>
+            <div class="modal-body">
+                <p class="text-danger">
+                    <span class="glyphicon glyphicon-info-sign"></span>您确定退出后台管理系统？
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary affirm">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

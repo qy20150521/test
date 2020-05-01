@@ -1,0 +1,11 @@
+.content{
+    margin-top: 20px;
+}
+.cartogram{
+    width: 45%;
+    height: 400px;
+    float: left;
+}
+.cartogram:last-child{
+    margin-left: 10%;
+}

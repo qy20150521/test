@@ -1,0 +1,21 @@
+table,th{
+    text-align: center;
+}
+.add{
+    margin-bottom: 20px;
+}
+.imgUpload{
+    width: 82px;
+    height: 34px;
+    position: relative;
+}
+.imgUpload input{
+    width: 82px;
+    height: 34px;
+    position: absolute;
+    opacity: 0;
+    z-index: 10;
+}
+.imgUpload a{
+    position: absolute;
+}

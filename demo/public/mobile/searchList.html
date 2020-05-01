@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <!--在ios中是否运行时创建快捷启动方式-->
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <!--ios设置顶部通知栏的样式 黑色-->
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <!--遇到数字不转化为电话号码的格式-->
+    <meta content="telephone=no" name="format-detection">
+    <title>乐淘首页</title>
+    <link href="res/mui/css/mui.css" rel="stylesheet">
+    <link href="res/fontAwesome/css/font-awesome.css" rel="stylesheet">
+    <link href="css/searchList.less" rel="stylesheet" type="text/less">
+    <script src="res/less/less.js"></script>
+    <script src="res/zepto/zepto.js"></script>
+    <script src="js/common.js"></script>
+    <script src="res/artTemplate/template-web.js"></script>
+    <script src="res/mui/js/mui.js"></script>
+    <script src="js/searchList.js"></script>
+</head>
+<body>
+<script id="temp" type="text/html">
+    {{ each data}}
+    <div class="product_item" data-href='product.html?productId={{$value.id}}'>
+        <div class="product_img">
+            <img src="{{ $value.pic[0].picAddr }}" alt="{{ $value.proName }}">
+        </div>
+        <div class="product_text">
+            <p>{{ $value.proName }}</p>
+            <div>
+                <span class="red">{{ $value.price }}</span>
+                <span class="grey">{{ $value.oldPrice }}</span>
+            </div>
+            <div class="buy">
+                <a href="#">立即购买</a>
+            </div>
+        </div>
+    </div>
+    {{ /each }}
+</script>
+<div class="app">
+    <!-- 头部 -->
+    <header>
+        <a href="searchCenter.html" class="left"><span class="fa fa-arrow-left"></span></a>
+        <h3>乐淘云购</h3>
+        <a href="searchCenter.html" class="right"><span class="fa fa-search"></span></a>
+    </header>
+    <!-- 主体 -->
+    <div class="content">
+        <div class="warp">
+            <div id="refreshContainer" class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <div class="search_bar">
+                        <input type="search" placeholder="请输入搜索内容" class="search">
+                        <input type="button" value="搜索" class="btn">
+                    </div>
+                    <div class="tab clearFix">
+                        <a href="javascript:void(0);" class="now">上架时间<span class="fa fa-angle-down"></span></a>
+                        <a href="javascript:void(0);" data-type="price">价格<span class="fa fa-angle-down"></span></a>
+                        <a href="javascript:void(0);" data-type="num">库存<span class="fa fa-angle-down"></span></a>
+                        <a href="javascript:void(0);">折扣<span class="fa fa-angle-down"></span></a>
+                    </div>
+                    <div class="product clearFix">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 足部 -->
+    <footer>
+        <div>
+            <a href="index.html">
+                <span class="mui-icon mui-icon-home"></span>
+                <h5>首页</h5>
+            </a>
+        </div>
+        <div>
+            <a href="category.html" class="active">
+                <span class="mui-icon mui-icon-bars"></span>
+                <h5>分类</h5>
+            </a>
+        </div>
+        <div>
+            <a href="#">
+                <span class="mui-icon mui-icon-contact"></span>
+                <h5>购物车</h5>
+            </a>
+        </div>
+        <div>
+            <a href="member.html">
+                <span class="mui-icon mui-icon-gear"></span>
+                <h5>会员中心</h5>
+            </a>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

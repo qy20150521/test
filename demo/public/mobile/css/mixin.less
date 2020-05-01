@@ -1,0 +1,9 @@
+//媒体查询
+.mixin(@len,@index: 1) when (@index<=@len) {
+  @media (min-width: extract(@deviceList, @index)) {
+    html {
+      font-size: extract(@deviceList,@index) / @psdWidth * @baseFontSize;
+    }
+  }
+  .mixin(@len, @index + 1);
+}

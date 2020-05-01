@@ -1,0 +1,63 @@
+//导入模块
+@import "var";
+@import "mixin";
+@import "adapter";
+@import "base";
+@import "header";
+@import "footer";
+//主体
+.content {
+  width: 100%;
+  height: 100%;
+  .warp {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    .lt {
+      width: 90rem/@baseFontSize;
+      float: left;
+      height: 100%;
+      ul {
+        li {
+          a {
+            display: block;
+            width: 100%;
+            height: 50rem/@baseFontSize;
+            line-height: 50rem/@baseFontSize;
+            text-align: center;
+            background-color: #F3F4F5;
+            border: solid 1px #CCCCCC;
+            border-left: none;
+            &.now {
+              border: none;
+              background-color: transparent;
+              color: #FFA500;
+            }
+          }
+        }
+      }
+    }
+    .rt {
+      overflow: hidden;
+      height: 100%;
+      ul{
+        width: 100%;
+        li{
+          width: 100%/3;
+          float: left;
+          a{
+            display: block;
+            width: 100%;
+            text-align: center;
+            img{
+              width: 70%;
+              margin: 0 auto;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

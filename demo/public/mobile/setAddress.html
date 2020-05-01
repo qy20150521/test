@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <!--在ios中是否运行时创建快捷启动方式-->
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <!--ios设置顶部通知栏的样式 黑色-->
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <!--遇到数字不转化为电话号码的格式-->
+    <meta content="telephone=no" name="format-detection">
+    <title>收货地址管理</title>
+    <link href="res/mui/css/mui.css" rel="stylesheet">
+    <link href="res/fontAwesome/css/font-awesome.css" rel="stylesheet">
+    <link href="css/setAddress.less" rel="stylesheet" type="text/less">
+    <script src="res/less/less.js"></script>
+    <script src="res/artTemplate/template-web.js"></script>
+    <script src="res/zepto/zepto.js"></script>
+    <script src="res/mui/js/mui.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/setAddress.js"></script>
+</head>
+<body>
+<script id="address" type="text/html">
+    {{ if data.length }}
+    {{ each data }}
+    <li class="mui-table-view-cell">
+        <div class="mui-slider-right mui-disabled lt">
+            <!--<a class="mui-btn mui-btn-blue" style="transform: translate(-90px, 0px);">编辑</a>-->
+            <a data-id="{{ $value.id }}" class="mui-btn mui-btn-red del" style="transform: translate(-180px, 0px);">删除</a>
+        </div>
+        <a class="mui-navigate-right mui-table-cell mui-slider-handle rt"
+           style="transform: translate(0px, 0px);" href="addAddress.html?id={{ $value.id}}">
+            <div class="mui-media-body">
+                <p class="p_black">邮编：{{ $value.postCode }} 收货人：{{ $value.recipients }}</p>
+                <p class="mui-ellipsis">{{ $value.address }}{{ $value.addressDetail }}</p>
+            </div>
+        </a>
+    </li>
+    {{ /each }}
+    {{ else }}
+    <p>暂无收货地址</p>
+    {{ /if }}
+</script>
+<div class="app">
+    <!-- 头部 -->
+    <header>
+        <a href="member.html" class="left"><span class="fa fa-arrow-left"></span></a>
+        <h3>收货地址管理</h3>
+    </header>
+    <!-- 主体 -->
+    <div class="content">
+        <div class="warp">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <a href="addAddress.html" class="add_address">添加收货地址</a>
+                    <ul id="OA_task_2" class="mui-table-view mui-table-view-chevron address">
+                        <!--<li class="mui-table-view-cell">-->
+                        <!--<div class="mui-slider-right mui-disabled lt">-->
+                        <!--<a class="mui-btn mui-btn-blue" style="transform: translate(-90px, 0px);">编辑</a>-->
+                        <!--<a class="mui-btn mui-btn-red del" style="transform: translate(-180px, 0px);">删除</a>-->
+                        <!--</div>-->
+                        <!--<a class="mui-navigate-right mui-table-cell mui-slider-handle rt"-->
+                        <!--style="transform: translate(0px, 0px);">-->
+                        <!--<div class="mui-media-body">-->
+                        <!--<p class="p_black">邮编：12345 收货人：哈哈</p>-->
+                        <!--<p class="mui-ellipsis">烤炉模式的城</p>-->
+                        <!--</div>-->
+                        <!--</a>-->
+                        <!--</li>-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 足部 -->
+    <footer>
+        <div>
+            <a href="index.html">
+                <span class="mui-icon mui-icon-home"></span>
+                <h5>首页</h5>
+            </a>
+        </div>
+        <div>
+            <a href="category.html">
+                <span class="mui-icon mui-icon-bars"></span>
+                <h5>分类</h5>
+            </a>
+        </div>
+        <div>
+            <a href="cart.html">
+                <span class="mui-icon mui-icon-contact"></span>
+                <h5>购物车</h5>
+            </a>
+        </div>
+        <div>
+            <a href="member.html">
+                <span class="mui-icon mui-icon-gear"></span>
+                <h5>会员中心</h5>
+            </a>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

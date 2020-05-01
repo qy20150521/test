@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <!--在ios中是否运行时创建快捷启动方式-->
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <!--ios设置顶部通知栏的样式 黑色-->
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <!--遇到数字不转化为电话号码的格式-->
+    <meta content="telephone=no" name="format-detection">
+    <title>会员中心</title>
+    <link href="res/mui/css/mui.css" rel="stylesheet">
+    <link href="res/fontAwesome/css/font-awesome.css" rel="stylesheet">
+    <link href="css/member.less" rel="stylesheet" type="text/less">
+    <script src="res/less/less.js"></script>
+    <script src="res/zepto/zepto.js"></script>
+    <script src="res/artTemplate/template-web.js"></script>
+    <script src="res/mui/js/mui.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/member.js"></script>
+</head>
+<body>
+<script id="temp" type="text/html">
+    <a href="#" class="clearFix">
+        <img class="mui-pull-left avatar" src="images/user.jpg">
+        <div class="mui-pull-left">
+            <h5 class="nickname">{{ username }}</h5>
+            <h6 class="tel">绑定手机：{{ mobile }}</h6>
+        </div>
+        <span class="mui-icon mui-icon-arrowright mui-pull-right"></span>
+    </a>
+</script>
+<div class="app">
+    <!-- 头部 -->
+    <header>
+        <a href="searchCenter.html" class="left"><span class="fa fa-arrow-left"></span></a>
+        <h3>会员中心</h3>
+    </header>
+    <!-- 主体 -->
+    <div class="content">
+        <div class="warp">
+            <div class="container">
+                <ul>
+                    <!-- 个人信息 -->
+                    <li class="person">
+
+                    </li>
+                    <li>
+                        <a href="changePwd.html">账号与安全<span class="mui-icon mui-icon-arrowright mui-pull-right"></span></a>
+                    </li>
+                    <li>
+                        <a href="cart.html">我的购物车<span class="mui-icon mui-icon-arrowright mui-pull-right"></span></a>
+                    </li>
+                    <li>
+                        <a href="setAddress.html">收货地址管理<span
+                                class="mui-icon mui-icon-arrowright mui-pull-right"></span></a>
+                    </li>
+                </ul>
+                <div class="logout">
+                    <a href="#">退出登录</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 足部 -->
+    <footer>
+        <div>
+            <a href="index.html">
+                <span class="mui-icon mui-icon-home"></span>
+                <h5>首页</h5>
+            </a>
+        </div>
+        <div>
+            <a href="category.html">
+                <span class="mui-icon mui-icon-bars"></span>
+                <h5>分类</h5>
+            </a>
+        </div>
+        <div>
+            <a href="#">
+                <span class="mui-icon mui-icon-contact"></span>
+                <h5>购物车</h5>
+            </a>
+        </div>
+        <div>
+            <a href="member.html" class="active">
+                <span class="mui-icon mui-icon-gear"></span>
+                <h5>会员中心</h5>
+            </a>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

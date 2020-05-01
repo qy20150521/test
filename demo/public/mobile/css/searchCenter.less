@@ -1,0 +1,72 @@
+//导入模块
+@import "var";
+@import "mixin";
+@import "adapter";
+@import "base";
+@import "header";
+@import "footer";
+//主体
+.content {
+  width: 100%;
+  height: 100%;
+  .warp {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    .search_bar {
+      padding: 10rem/@baseFontSize 10rem/@baseFontSize 0;
+      display: flex;
+      .search {
+        flex: 11;
+        height: 30rem/@baseFontSize;
+        background-color: transparent;
+        border: solid 1px @themeColor;
+        text-align: left;
+        border-radius: 4px 0 0 4px;
+      }
+      .btn {
+        flex: 2;
+        height: 30rem/@baseFontSize;
+        border-radius: 0 4px 4px 0;
+        background-color: @themeColor;
+        color: #fff;
+        margin-left: -1px;
+      }
+    }
+    .record_title {
+      padding: 0 10rem/@baseFontSize 10rem/@baseFontSize;
+      font-size: 12rem/@baseFontSize;
+      .clear {
+        float: right;
+      }
+    }
+    .record {
+      padding: 0 15rem/@baseFontSize;
+      .record_list {
+
+        border: solid 1px #ccc;
+        li {
+          position: relative;
+          height: 30rem/@baseFontSize;
+          &:not(:first-child){
+            border-top: solid 1px #ccc;
+          }
+          .record_word {
+            padding-left: 10rem/@baseFontSize;
+            line-height: 30rem/@baseFontSize;
+            position: absolute;
+            width: 100%;
+          }
+          .close {
+            position: absolute;
+            right: 5px;
+            height: 30rem/@baseFontSize;
+            line-height: 30rem/@baseFontSize;
+            z-index: 100;
+          }
+        }
+      }
+    }
+  }
+
+}

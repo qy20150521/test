@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>主页</title>
+    <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/nprogress/nprogress.css"/>
+    <link href="css/common.css" type="text/css" rel="stylesheet">
+    <link href="css/index.css" type="text/css" rel="stylesheet">
+    <script src="assets/jquery/jquery.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.js"></script>
+    <script src="assets/nprogress/nprogress.js"></script>
+    <script src="assets/echarts/echarts.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/index.js"></script>
+</head>
+<body>
+<!-- 侧边栏 -->
+<div class="aside">
+    <h4>ITCAST</h4>
+    <div class="aside_bot">
+        <div class="head_img">
+            <img src="images/default.png">
+            <span>超级管理员</span>
+        </div>
+        <ul class="aside_menu">
+            <li><a href="userControl.html"><span class="glyphicon glyphicon-user"></span> 用户管理</a></li>
+            <li>
+                <a href="javascript:;" class="change_toggle"><span class="glyphicon glyphicon-list"></span> 分类管理</a>
+                <div class="toggle">
+                    <a href="firstClassify.html">一级分类</a>
+                    <a href="secondClassify.html">二级分类</a>
+                </div>
+            </li>
+            <li><a href="#"><span class="glyphicon glyphicon-tags"></span> 商品管理</a></li>
+        </ul>
+    </div>
+</div>
+<!-- 内容 -->
+<div class="main">
+    <nav>
+        <a href="javascript:;" class="pull-left"><span class="glyphicon glyphicon-align-justify"></span></a>
+        <a href="javascript:;" class="pull-right"><span class="glyphicon glyphicon-log-out" data-toggle="modal"
+                                                        data-target="#myModal"></span></a>
+    </nav>
+    <div class="container-fluid">
+        <ol class="breadcrumb">
+            <li><a href="#">管理系统</a></li>
+            <li><a href="#">首页</a></li>
+            <li><a href="#">二级分类</a></li>
+        </ol>
+        <div class="content">
+            <div id="histogram" class="cartogram"></div>
+            <div id="pieChart" class="cartogram"></div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
+            </div>
+            <div class="modal-body">
+                <p class="text-danger">
+                    <span class="glyphicon glyphicon-info-sign"></span>您确定退出后台管理系统？
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary affirm">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

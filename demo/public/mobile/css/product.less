@@ -1,0 +1,96 @@
+//导入模块
+@import "var";
+@import "mixin";
+@import "adapter";
+@import "base";
+@import "header";
+//主体
+.content {
+  width: 100%;
+  height: 100%;
+  .warp {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    .padding {
+      padding: 10rem/@baseFontSize 0 10rem/@baseFontSize 2%;
+      border-bottom: solid 1px #B4B4B4;
+      font-size: 13rem/@baseFontSize;
+      color: black;
+    }
+    .remark {
+      padding-right: 20%;
+      font-size: 16rem/@baseFontSize;
+    }
+    .price {
+      .sp_bold {
+        color: #EA543D;
+        font-weight: bold;
+        font-size: 18rem/@baseFontSize;
+      }
+      .sp_gray {
+        margin-left: 5px;
+        color: #B4B4B4;
+      }
+    }
+    .size {
+      span {
+        display: inline-block;
+        border: solid 1px #B4B4B4;
+        width: 20rem/@baseFontSize;
+        height: 20rem/@baseFontSize;
+        line-height: 20rem/@baseFontSize;
+        text-align: center;
+        &.now{
+          background-color: #FA672D;
+        }
+      }
+    }
+    .count {
+      span {
+        display: inline-block;
+        border: solid 1px #B4B4B4;
+        width: 20rem/@baseFontSize;
+        height: 20rem/@baseFontSize;
+        line-height: 20rem/@baseFontSize;
+        text-align: center;
+      }
+      .reCount{
+        border: none;
+      }
+    }
+  }
+}
+
+//足部
+footer {
+  width: 100%;
+  height: 50rem/@baseFontSize;
+  line-height: 40rem/@baseFontSize;
+  background-color: #E6E6E6;
+  position: fixed;
+  bottom: 0;
+  max-width: 750px;
+  min-width: 320px;
+  margin: 0 auto;
+  padding: 5rem/@baseFontSize 0;
+  span.fa{
+    padding-left: 20rem/@baseFontSize;
+    padding-right: 20rem/@baseFontSize;
+    font-size: 20rem/@baseFontSize;
+  }
+  a {
+    display: inline-block;
+    width: 40%;
+    height: 100%;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    &.add_cart {
+      background-color: #991020;
+    }
+    &.buy {
+      background-color: #FA672D;
+    }
+  }
+}

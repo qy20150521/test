@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <!--在ios中是否运行时创建快捷启动方式-->
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <!--ios设置顶部通知栏的样式 黑色-->
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <!--遇到数字不转化为电话号码的格式-->
+    <meta content="telephone=no" name="format-detection">
+    <title>注册</title>
+    <link href="res/mui/css/mui.css" rel="stylesheet">
+    <link href="res/fontAwesome/css/font-awesome.css" rel="stylesheet">
+    <link href="css/reg.less" rel="stylesheet" type="text/less">
+    <script src="res/less/less.js"></script>
+    <script src="res/zepto/zepto.js"></script>
+    <script src="res/mui/js/mui.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/reg.js"></script>
+</head>
+<body>
+<div class="app">
+    <!-- 头部 -->
+    <header>
+        <a href="searchCenter.html" class="left"><span class="fa fa-arrow-left"></span></a>
+        <h3>注册</h3>
+    </header>
+    <!-- 主体 -->
+    <div class="content">
+        <div class="warp">
+            <div class="form">
+                <form class="mui-input-group" action="" method="">
+                    <div class="mui-input-row">
+                        <input type="text" class="mui-input-clear username" placeholder="用户名">
+                    </div>
+                    <div class="mui-input-row">
+                        <input type="text" class="mui-input-clear tel" placeholder="手机号">
+                    </div>
+                    <div class="mui-input-row">
+                        <input type="password" class="mui-input-password pwd" placeholder="密码">
+                    </div>
+                    <div class="mui-input-row">
+                        <input type="password" class="mui-input-password rePwd" placeholder="确认密码">
+                    </div>
+                    <div class="verify">
+                        <div class="mui-input-row lt">
+                            <input type="text" class="mui-input-clear vCode" placeholder="验证码">
+                        </div>
+                        <div class="mui-button-row rt">
+                            <button type="button" class="mui-btn mui-btn-primary getVcode" >获取验证码</button>
+                        </div>
+                    </div>
+                    <div class="mui-button-row rt">
+                        <button type="button" class="mui-btn mui-btn-primary reg" >注册</button>
+                    </div>
+                    <div class="bottom">
+                        <p>
+                            <input type="checkbox" class="checkbox" checked>
+                            我同意《会员服务协议》
+                        </p>
+                        <a href="login.html" class="login">立即登录</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- 足部 -->
+    <footer>
+        <div>
+            <a href="index.html">
+                <span class="mui-icon mui-icon-home"></span>
+                <h5>首页</h5>
+            </a>
+        </div>
+        <div>
+            <a href="category.html">
+                <span class="mui-icon mui-icon-bars"></span>
+                <h5>分类</h5>
+            </a>
+        </div>
+        <div>
+            <a href="">
+                <span class="mui-icon mui-icon-contact"></span>
+                <h5>购物车</h5>
+            </a>
+        </div>
+        <div>
+            <a href="member.html">
+                <span class="mui-icon mui-icon-gear"></span>
+                <h5>会员中心</h5>
+            </a>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
